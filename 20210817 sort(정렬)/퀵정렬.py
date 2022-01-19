@@ -1,4 +1,4 @@
-array = [5, 7, 9, 0, 3, 1, 6, 2, 4, 8,8,3]
+array = [5, 7, 9, 0, 3, 1, 6, 2, 4, 8, 8, 3]
 
 
 def quick_sort(array, start, end):
@@ -15,7 +15,7 @@ def quick_sort(array, start, end):
         while right > start and array[right] >= array[pivot]:
             right -= 1
         if left > right:  # 엇갈렸다면 작은 데이터와 피벗을 교체(엇갈렸을 때 엇갈린부분 뒤쪽으로는 다 피벗보다 크고 앞쪽으는 피벗보다 작기 때문)
-            array[right], array[pivot] = array[pivot], array[right] #교체하면 해당 피벗값은 딱 중간값이 된다.(분할)
+            array[right], array[pivot] = array[pivot], array[right]  # 교체하면 해당 피벗값은 딱 중간값이 된다.(분할)
         else:  # 엇갈리지 않았다면 작은 데이터와 큰 데이터를 교체
             array[left], array[right] = array[right], array[left]
     # 분할 이후 왼쪽 부분과 오른쪽 부분에서 각각 정렬 수행
