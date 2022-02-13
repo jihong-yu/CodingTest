@@ -5,6 +5,7 @@ s = 0
 e = N - 1
 count = 0
 sum_ = sum(array[:])
+temp_sum = sum_
 while True:
 
     if sum_ == M:
@@ -17,7 +18,9 @@ while True:
     e -= 1
 
     if s > e:
+        sum_ = temp_sum - array[s]
+        temp_sum = sum_
         s += 1
         e = N - 1
-        sum_ = sum(array[s:e + 1])
+
 print(count)
