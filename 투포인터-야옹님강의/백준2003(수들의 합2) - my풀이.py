@@ -14,7 +14,6 @@ while True:
         break
 
     sum_ -= array[e]
-
     e -= 1
 
     if s > e:
