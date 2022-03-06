@@ -92,9 +92,9 @@ for i in range(N):
     temp = list(map(int, input().split()))
     for j in range(len(temp)):
         if 1 <= temp[j] <= 5:  # 만약 1~5 사이라면
-            cctv.append((i, j, temp[j]))  # temp[j]를
+            cctv.append((i, j, temp[j]))  # i,j,cctv번호 를 저장
     room.append(temp)
 
-min_ = 1 << 60
-dfs(0)
+min_ = 1 << 60  # 최솟값을 저장할 변수
+dfs(0)  # 재귀를 돈다.
 print(min_)
