@@ -1,8 +1,8 @@
-N, A = map(int, input().split())
+N, result = map(int, input().split())
 
 count = 0
-X = A
+X = result
 while X <= N:
     count += N // X
-    X *= A
+    X *= result
 print(count)

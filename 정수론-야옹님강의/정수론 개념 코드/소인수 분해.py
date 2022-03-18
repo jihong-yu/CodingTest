@@ -2,11 +2,11 @@
 
 N = int(input())
 
-A = N
+result = N
 for i in range(2, N + 1):
-    while A % i == 0:
+    while result % i == 0:
         print(i, end=" ")
-        A //= i
+        result //= i
 print()
 # 2. sqrt 활용하기
 # n => a, b, c, d, e, f, g, h , i
