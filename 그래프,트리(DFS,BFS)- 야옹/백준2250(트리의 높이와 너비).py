@@ -70,7 +70,5 @@ for i in range(len(depth_list)):
     else:
         result.append(max(depth_list[i]) - min(depth_list[i]) + 1)
 
-print(tree)
-print(depth_list)
-print(result)
+
 print(result.index(max(result), 1), max(result))
