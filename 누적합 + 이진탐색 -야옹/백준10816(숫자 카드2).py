@@ -9,7 +9,7 @@ for i in range(M):
 
     s = 0
     e = N - 1
-    ans_1 = -1
+    ans_1 = 0
     # 시작부분 찾기
     while s <= e:
 
@@ -25,7 +25,7 @@ for i in range(M):
 
     s = 0
     e = N - 1
-    ans_2 = -1
+    ans_2 = 1
     # 끝부분 찾기
     while s <= e:
 
@@ -39,7 +39,5 @@ for i in range(M):
         else:
             s = mid + 1
 
-    if ans_1 == -1 and ans_2 == -1:  # 둘다 -1이라면(즉 해당 수가 없다면)
-        print(0, end=" ")
-    else:
-        print(ans_2 - ans_1 + 1, end=" ")
+
+    print(ans_2 - ans_1 + 1, end=" ")
