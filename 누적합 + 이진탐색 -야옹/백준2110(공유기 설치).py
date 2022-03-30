@@ -5,7 +5,7 @@ N, C = map(int, input().split())
 home = [int(input()) for _ in range(N)]
 home.sort()  # 오름차순 정렬
 s = 1  # 시작 인덱스 저장
-e = max(home)  # 끝 인덱스 저장
+e = home[-1] - home[0]  # 끝 인덱스 저장
 ans = 0
 
 
