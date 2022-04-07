@@ -22,7 +22,7 @@ def win(p, q, w):
 
 # dp[p][q][w] = 구슬이 한 통에는 p개, 한 통에는 q개 있을 때 w차례(0 or 1)에 이길 수 있는지.
 # A의 차례는 1, B의 차례는 0
-dp = [[[-1] * 2 for _ in range(5)] for _ in range(5)]
+dp = [[[-1] * 2 for _ in range(501)] for _ in range(501)]
 b = list(map(int, input().split()))
 for _ in range(5):
     k1, k2 = map(int, input().split())
