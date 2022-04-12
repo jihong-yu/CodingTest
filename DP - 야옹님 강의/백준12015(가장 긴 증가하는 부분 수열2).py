@@ -14,10 +14,9 @@ for i in range(N):
         else:
             e = mid - 1
 
-    if idx == len(v) - 1: #지금 고른 숫자가 가장 큰 숫자이면 마지막에 추가해준다
+    if idx == len(v) - 1:  # 지금 고른 숫자가 가장 큰 숫자이면 마지막에 추가해준다
         v.append(arr[i])
-    elif idx == len(v) - 2: #지금 고른 숫자가 마지막 숫자보다 작다면 그 숫자를 마지막 숫자로 처리
+    else:  # 가장 큰 숫자가 아니라면 (탐색한 위치 + 1) 에 해당 숫자로 바꿔준다.
         v[idx + 1] = arr[i]
-
 
 print(len(v) - 1)
