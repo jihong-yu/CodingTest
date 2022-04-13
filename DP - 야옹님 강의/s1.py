@@ -1,26 +1,6 @@
-import sys
-sys.setrecursionlimit(10000)
-
-def recur(cur, prv):
-    ret = 0xffffff
-    if cur > N:
-        return ret
-
-    if cur == N:
-        return 0
-
-    if memo[cur][prv] != -1:
-        return memo[cur][prv]
-
-    for i in range(3):
-        if prv == i:
-            continue
-        ret = min(ret, recur(cur + 1, i) + mat[cur][i])
-        memo[cur][prv] = ret
-    return ret
-
-N = int(input())
-mat = [list(map(int, input().split())) for _ in range(N)]
-memo = [[-1] * (N+10) for _ in range(N+10)]
-
-print(recur(0, -10))
+'''
+| 특정 비트를 킬때 사용
+& 특정비트가 켜저있는지 혹은 특정 비트를 끌 때 사용 (x & (1 << 2)) != 0 or (x & ~(1 << @))
+^ 특정 비트 상태를 반전시킬 때 사용
+tip) x & (-x) x의 제일 오른쪽 1이 나온다.
+'''
