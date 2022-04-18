@@ -39,8 +39,8 @@ T = int(input())
 for _ in range(1, T + 1):
     h, w = map(int, input().split())
 
-    miro = [list('.' + input() + '.') for _ in range(h)]
-    miro = [['.'] * (w + 2)] + miro + [['.'] * (w + 2)]
+    miro = ['.' + input() + '.' for _ in range(h)]
+    miro = ['.' * (w + 2)] + miro + ['.' * (w + 2)]
     visited = [[False] * (w + 2) for _ in range(h + 2)]
     key = {}  # 가지고 있는 키 저장
     visited_doc = []  # 방문한 키 위치 저장
