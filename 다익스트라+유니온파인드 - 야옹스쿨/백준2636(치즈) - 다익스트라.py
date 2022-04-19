@@ -17,7 +17,7 @@ def bfs():
     distance[0][0] = cheese[0][0]
     while q:
         cost, r, c = heapq.heappop(q)
-        time_ = cost
+        time_ = cost  # 걸린시간을 저장(마지막에 저장된 값이 제일 마지막에 녹은 치즈의 시간)
 
         if cost > distance[r][c]:
             continue
@@ -35,18 +35,17 @@ def bfs():
                 heapq.heappush(q, (distance[nr][nc], nr, nc))
 
 
-
 bfs()
 print(time_)
-count_ = 0
 
-#만약
+# 만약 1내부에 있는 0들도 같은 거리로 인식이 되기 때문에 해당 위치는 0으로 초기화 해주어야 한다.
 for i in range(N):
     for j in range(M):
         if not cheese[i][j]:
             distance[i][j] = 0
 
-if time_ != 0:
+count_ = 0  # 마지막에 남은 치즈 개수 체크
+if time_ != 0:  # 만약 시간이 0아니라면(즉, 0은 체크하면 안됨)
     for i in distance:
         count_ += i.count(time_)
 print(count_)
