@@ -5,16 +5,16 @@ input = sys.stdin.readline
 N = int(input())
 
 nums = []
-max_ = 0
+time_ = 0
 dp = {}
 for _ in range(N):
     temp = list(map(int, input().split()))
-    if max_ < temp[1]:
-        max_ = temp[1]
+    if time_ < temp[1]:
+        time_ = temp[1]
     nums.append(temp)
 
 s = 1
-e = max_
+e = time_
 ans = 0
 
 

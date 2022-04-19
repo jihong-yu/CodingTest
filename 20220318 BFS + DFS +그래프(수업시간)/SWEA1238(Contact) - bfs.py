@@ -27,13 +27,13 @@ for tc in range(1, 10 + 1):
 
     bfs(v)  # bfs를 돈다
 
-    max_ = 0  # 전화를 받은 순서중 가장 큰값을 저장
+    time_ = 0  # 전화를 받은 순서중 가장 큰값을 저장
     result = 0  # 큰 값중에서 가장 마지막 사람을 저장
 
     # 전화를 받은 순서 중 가장 큰 값과 그에 해당하는 가장 큰 번호를 찾는다.
     for i in range(1, 100 + 1):
-        if max_ <= visited[i][1]:
-            max_ = visited[i][1]
+        if time_ <= visited[i][1]:
+            time_ = visited[i][1]
             result = i
 
     print(f'#{tc} {result}')

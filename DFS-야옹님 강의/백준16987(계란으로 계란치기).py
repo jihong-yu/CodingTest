@@ -1,5 +1,5 @@
 def dfs(depth):
-    global max_
+    global time_
 
     if depth == N:  # 만약 길이 N개를 뽑았다면
         count = 0
@@ -26,8 +26,8 @@ def dfs(depth):
             dfs(depth + 1)  # 바로 dfs를 넘어간다.
 
 
-max_ = 0
+time_ = 0
 N = int(input())
 egg = [list(map(int, input().split())) for _ in range(N)]
 dfs(0)
-print(max_)
+print(time_)

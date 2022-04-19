@@ -6,7 +6,7 @@ dc = [0, 1, 0, -1]  # 상 우 하 좌
 
 
 def bfs(r, c):
-    global max_
+    global time_
     global start
 
     queue = deque([[r, c, array[r][c]]])
@@ -37,7 +37,7 @@ for tc in range(1, T + 1):
     N = int(input())
     array = [list(map(int, input().split())) for _ in range(N)]
 
-    max_ = 1  # 이동 횟수 저장
+    time_ = 1  # 이동 횟수 저장
     start = 1 << 60  # 시작 방번호 저장
 
     # 정방향으로 한번 실행(우,하 방향 검색)
@@ -54,4 +54,4 @@ for tc in range(1, T + 1):
             if visited[i][j] == 1:
                 bfs(i, j)
 
-    print(f'#{tc} {start} {max_}')
+    print(f'#{tc} {start} {time_}')

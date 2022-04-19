@@ -37,11 +37,11 @@ def bfs(r, c):
     return distance
 
 
-max_ = 0
+time_ = 0
 for i in range(len(land)):
     visited = [[False] * M for _ in range(N)]
     distance = bfs(land[i][0], land[i][1])
-    if max_ < distance:
-        max_ = distance
+    if time_ < distance:
+        time_ = distance
 
-print(max_)
+print(time_)

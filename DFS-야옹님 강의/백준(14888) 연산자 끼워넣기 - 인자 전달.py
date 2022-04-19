@@ -1,5 +1,5 @@
 def dfs(depth, num):
-    global max_
+    global time_
     global min_
 
     if depth == N - 1:
@@ -38,9 +38,9 @@ for _ in range(temp[2]):
 for _ in range(temp[3]):
     oper.append('%')
 
-max_ = -1e+20
+time_ = -1e+20
 min_ = 1e+20
 visited = [False] * len(oper)
 dfs(0, nums[0])
-print(max_)
+print(time_)
 print(min_)
