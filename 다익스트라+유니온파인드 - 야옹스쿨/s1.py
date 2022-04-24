@@ -8,7 +8,7 @@ def bfs(s):
     global ans
     visited[s] = True
     que.append(s)
-
+    #
     while que:
         val = que.popleft()
         for nxt in lst[val]:
