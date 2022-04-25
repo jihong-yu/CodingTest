@@ -41,3 +41,4 @@ print()
 print('부모 테이블: ', end='')
 for i in range(1, v + 1):
     print(parent[i], end=' ')
+
