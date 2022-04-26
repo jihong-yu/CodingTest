@@ -24,8 +24,8 @@ def dijkstra(v1, v2):
         for nxt, nxt_cost in graph[cur]:
             # 만약 다음노드에 저장된 중량값이 현재까지 구한 cost와 다음 노드의 중량보다 작다면
             if distance[nxt] < nxt_cost and distance[nxt] < cost:
-                distance[nxt] = min(cost, nxt_cost)
-                heapq.heappush(q, (-distance[nxt], nxt))
+                distance[nxt] = min(cost, nxt_cost)  # 그중 작은값을 최대 중량으로 저장 후
+                heapq.heappush(q, (-distance[nxt], nxt))  # 최대 값으로 힙에 넣어준다
 
 
 N, M = map(int, input().split())
