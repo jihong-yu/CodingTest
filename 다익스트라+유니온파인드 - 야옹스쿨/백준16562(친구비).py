@@ -18,7 +18,7 @@ def union_(a, b):
         return
 
     parent[a] = b
-    cost[b] = min(cost[a], cost[b], arr[a], arr[b])
+    cost[b] = min(cost[a], cost[b])
 
 
 N, M, K = map(int, input().split())
@@ -26,7 +26,7 @@ N, M, K = map(int, input().split())
 parent = [i for i in range(N + 1)]
 
 arr = [0] + list(map(int, input().split()))
-cost = [1 << 60] * (N + 1)
+cost = arr[:]
 for _ in range(M):
     a, b = map(int, input().split())
     union_(a, b)
@@ -34,10 +34,8 @@ for _ in range(M):
 ans = 0
 
 for i in range(1, N + 1):
-    if parent[i] == i and cost[i] != 1 << 60:
+    if parent[i] == i:
         ans += cost[i]
-    elif parent[i] == i and cost[i] == 1 << 60:
-        ans += arr[i]
 
 if ans > K:
     print('Oh no')
