@@ -15,34 +15,36 @@ def union_(a, b):
 
     if a == b:
         return
-
     parent[a] = b
 
 
-N = int(input())
+N, M = map(int, input().split())
+parent = [i for i in range(N + 1)]
+gods = []
 
-parent = [i for i in range(N)]
-graph = []
 for i in range(N):
-    a, b = map(float, input().split())
-    graph.append((i, a, b))  # 별의 번호, x좌표, y좌표
+    x, y = map(int, input().split())
+    gods.append((i + 1, x, y))
 
-graph2 = graph[:]
+for j in range(M):
+    a, b = map(int, input().split())
+    union_(a, b)
+
 distance = []
 for i in range(N):
     for j in range(i + 1, N):
-        a, b = graph[i][0], graph[j][0]
-        d = ((graph[i][1] - graph[j][1]) ** 2 + (graph[i][2] - graph[j][2]) ** 2) ** 0.5
+        a, b = gods[i][0], gods[j][0]
+        d = ((gods[i][1] - gods[j][1]) ** 2 + (gods[i][2] - gods[j][2]) ** 2) ** 0.5
         distance.append((a, b, d))
 
 distance.sort(key=lambda x: x[2])
 
 ans = 0
 for i in distance:
-    a, b, cost = i
+    a, b, d = i
 
     if find(a) != find(b):
         union_(a, b)
-        ans += cost
+        ans += d
 
 print(f'{ans:.2f}')
