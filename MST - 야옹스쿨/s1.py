@@ -25,16 +25,20 @@ parent = [i for i in range(N)]
 graph = []
 for i in range(N):
     x, y, z = map(int, input().split())
-    graph.append((i,x, y, z))
+    graph.append((i, x, y, z))  # 각 행성번호를 함께 저장
 
 graph_2 = graph[:]
 graph_3 = graph[:]
 
+# 각각의 점을 기준으로 정렬
 graph.sort(key=lambda x: x[1])
 graph_2.sort(key=lambda x: x[2])
 graph_3.sort(key=lambda x: x[3])
+
+# 두점과 그 사이의 거리를 넣을 리스트
 distance = []
 
+# 각 지점마다 두점사이의 거리를 계산
 for i in range(N - 1):
     cost = abs(graph[i][1] - graph[i + 1][1])
     distance.append((graph[i][0], graph[i + 1][0], cost))
@@ -45,6 +49,7 @@ for i in range(N - 1):
     cost = abs(graph_3[i][3] - graph_3[i + 1][3])
     distance.append((graph_3[i][0], graph_3[i + 1][0], cost))
 
+# 거리를 기준으로 오름차순
 distance.sort(key=lambda x: x[2])
 
 ans = 0
