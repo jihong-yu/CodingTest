@@ -10,6 +10,7 @@ def func(num):
     while i <= num:
         cnt += (num//i)*(i//2)
         i *= 2
+    print(cnt)
     return cnt
 
 
