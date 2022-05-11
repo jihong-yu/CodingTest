@@ -13,7 +13,7 @@ def dfs(r, c):
         # 아직 방문처리되지 않은 그룹이라면
         if not group_check.get(visited[r][c], 0):
             cnt += 1  # 개수를 +1 해준다.
-        group_check[group_num] = 1  # 그 후 해당 그룹은 모드 방문처리해준다.
+        group_check[group_num] = 1  # 해당 그룹은 반드시 방문처리해준다.
         return
 
     visited[r][c] = group_num  # 해당 위치를 해당 그룹으로 표시
