@@ -21,6 +21,7 @@ def zero_group_check(start_r, start_c):
             queue.append([nr, nc])  # 그후 해당 좌표를 큐에 담는다
 
 
+# 1의 위치에서 벽을 허물고 갈 수 있는 곳의 개수 확인
 def cnt_check(start_r, start_c):
     # 상 하 좌 우 를 돌면서
     for i in range(4):
@@ -40,8 +41,8 @@ N, M = map(int, input().split())
 arr = [list(map(int, input())) for _ in range(N)]
 dr = [-1, 0, 1, 0]  # 상 우 하 좌
 dc = [0, 1, 0, -1]  # 상 우 하 좌
-group_num = 1  # 그룹 번호 저장
-group_cnt_dict = {}  # 0의 그룹 정보저장
+group_num = 1  # 그룹 번호
+group_cnt_dict = {}  # 0 그룹 각각의 번호를 매기기 위한 딕셔너리
 
 visited = [[0] * M for _ in range(N)]  # 방문처리 및 0의 그룹 정보 저장
 for i in range(N):
