@@ -14,7 +14,7 @@ for i in range(n):
         heapq.heappush(leftHeap, -num)
     else:
         heapq.heappush(rightHeap, num)
-    print(leftHeap, rightHeap)
+    
     if rightHeap and rightHeap[0] < -leftHeap[0]:
         leftValue = heapq.heappop(leftHeap)
         rightValue = heapq.heappop(rightHeap)
