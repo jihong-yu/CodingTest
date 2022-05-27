@@ -10,6 +10,8 @@ max_ = 0
 
 dr = [-1, 0, 1, 0]  # 행 상 우 하 좌
 dc = [0, 1, 0, -1]  # 열 상 우 하 좌
+
+# 0과 2의 위치 찾기
 for i in range(N):
     for j in range(M):
         if not map_[i][j]:
@@ -18,6 +20,7 @@ for i in range(N):
             two.append((i, j))
 
 
+# 바이러스가 퍼지는 위치를 확인하여 안전지대 개수 구한다
 def bfs(dump_map: []):
     global max_
 
@@ -50,6 +53,7 @@ def bfs(dump_map: []):
         max_ = cnt
 
 
+# 0의 위치에서 3개를 뽑은 후 벽으로 바꾸어준다.
 def dfs(cur, start):
     if cur == 3:
         dump_map = []
