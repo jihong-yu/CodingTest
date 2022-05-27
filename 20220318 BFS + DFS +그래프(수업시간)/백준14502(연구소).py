@@ -21,11 +21,11 @@ for i in range(N):
 
 
 # 바이러스가 퍼지는 위치를 확인하여 안전지대 개수 구한다
-def bfs(dump_map: []):
+def bfs(dump_map):
     global max_
 
     visited = [[False] * M for _ in range(N)]
-    queue = deque([])
+    queue = deque()
     for i in range(len(two)):
         queue.append(two[i])
 

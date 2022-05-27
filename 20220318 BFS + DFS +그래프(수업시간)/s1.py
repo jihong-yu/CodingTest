@@ -6,5 +6,7 @@ queue = deque()
 for i in range(len(a)):
     queue.append(a[i])
 
-queue = deque([1])
 print(queue)
+queue2 = deque()
+
+print(queue2)
